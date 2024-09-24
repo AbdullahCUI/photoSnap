@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+	--primary-font-size:40px;
+	--primary-font-weight:700;
+	--secondary-font-size:18px;
+	--medium-font-size:15px;
+	--sm-font-size:12px;
+	--primary-font-color:#fff;
+	--list-style:none;
+	--text-decoration:none;
+	--secondary-font-color:#000;
+	--text-transform-uppercase: uppercase;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "DM Sans", sans-serif;
+}
+
+.flex {
+	display: flex;
+}
+
+.justify-content-around {
+	justify-content: space-around;
+}
+
+.list-style {
+ list-style: var(--list-style);
+}
+
+.nav-bar {
+	align-items: center;
+	padding-block: 28px;
+	max-width: 1440px;
+	margin-inline: auto;
+}
+
+.anchor-links {
+	text-decoration: var(--text-decoration);
+	font-size: var(--sm-font-size);
+	color: var(--secondary-font-color);
+	font-weight: var(--primary-font-weight);
+	text-transform: var(--text-transform-uppercase);
+}
+
+.menu {
+	gap: 37px;
+	transition: all .3s ease-in-out;
+}
+
+.logo {
+	gap: 8px;
+}
+
+.anchor-links {
+	display: inline-block;
+	position: relative;
+	transition: all .3s ease-in-out;
+}
+
+.anchor-links::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 2px;
+	transition: all .3s ease-in-out;
+	background-color: var(--secondary-font-color);
+}
+
+.anchor-links:hover::after {
+	width: 100%;
+}
+
+.anchor-links:hover {
+	color: #DFDFDF;
+}
+
+.link-btn , .menu-link-btn {
+	padding: 12px 24px;
+	background-color: #DFDFDF;
+}
+
+.menu-link-btn {
+	display: none;
+}
+
+.horizental-line {
+	height: 1px;
+	width: 250px;
+	background: var(--secondary-font-color);
+	display: none;
+}
+.link-btn:hover {
+	color: #5c5656;
+}
+
+.open-menu, .close-menu {
+	display: none;
+	position: absolute;
+	right: 42px;
+  top: 26px;
+}
+
+#check {
+	display: none;
+}
+
+@media (max-width:768px) {
+	.menu {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 40%;
+		position: fixed;
+		left: -100%;
+		top: 50px;
+		transition: all .3s ease-in-out;
+		z-index: 100;
+	}
+
+	.open-menu, .close-menu {
+		display: block;
+	}
+
+	#check:checked ~ .menu {
+		left: 0;
+	}
+
+	#check:checked ~ .open-menu {
+		display: none;
+	}
+
+	.menu-link-btn {
+		display: block;
+		background-color: #000;
+		color: var(--primary-font-color);
+		padding: 14px 68px;
+	}
+
+	.link-btn {
+		display: none;
+	}
+
+	.horizental-line {
+		display: block;
+	}
+}
