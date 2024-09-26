@@ -316,6 +316,7 @@ body {
 	flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+	max-width: 1440px;
 }
 
 .feautures-content__container {
